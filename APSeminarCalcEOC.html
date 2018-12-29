@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Grade Calc</title>
+</head>
+
+<body style="background-color:#ADD8E6">
+    <h1 style="font-family:Arial;">Ravi's AP Seminar Grade Calculator</h1>
+    <p>Enter your grade percentage in the class as shown in the portal. Input is a number (ex: 94.5)</p>
+    
+    <form id='nameForm'>
+        Grade percentage:  <input id='percent' type="number" maxlength='5'></input>
+        <button id='subButton' type='button' onclick="calc()">Calculate!</button>
+    </form>
+    
+    <p id="output"></p>
+    
+    <script>
+        function calc() {
+          var percent = document.getElementById('percent').value;
+          var possiblePoints = Math.round( (percent/100)*566 );
+          var tempA = 531 - possiblePoints;
+          var tempB = 100*(tempA/24);
+          var a = Math.round (tempA);
+          var b = Math.round (tempB);
+          
+          var output = document.getElementById('output');
+          
+          //setting this css style solving problem with new line in textContent
+          output.setAttribute('style', 'white-space: pre;');
+          
+          if (percent.length < 2) {
+            output.textContent = 'must contain at least 2 characters';
+          }
+          else {
+            output.textContent = 'To get an A you need to get a '+b+'% or higher on the IWA and IMP.\nThis means you need '+a+' points out of 24 for the EOC B.\n\n(Exact Values: '+tempB+' and '+tempA+')';
+          }
+        }
+    </script>
+
+</body>
+</html>
