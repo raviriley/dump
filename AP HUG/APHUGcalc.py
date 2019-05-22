@@ -1,4 +1,4 @@
-print ("Welcome to Ravi's 2017 APHUG Exam Score Estimator")
+print ("Welcome to Ravi's 2017 AP HUG Exam Score Estimator")
 print ("\n")
 def calc():
     MCscore = int (input("Multiple Choice Score Out Of 75:  "))
