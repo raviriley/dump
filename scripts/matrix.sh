@@ -4,7 +4,7 @@
 # Author: Brett Terpstra 2012 <http://brettterpstra.com>
 # Contributors: Lauri Ranta and Carl <http://blog.carlsensei.com/>
 #
-# A morning project. Could have been better, but I'm learning when to stop.
+# Modified by: Ravi Riley (added more colors and extended functionality)
 
 ### Customization:
 blue="\033[0;34m"
