@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Enter names in the fields, then click "Submit" to submit the form:</p>
+
+<form id='nameForm'>
+    Initial M1 dollar value:  <input id='initial' type='number'></input>
+    
+    <br>
+    
+    Reserve requirement %:   <input id='reserve_requirement' type='number'></input>
+    
+    <br>
+    
+    Number of times deposited: <input id='num' type='number'></input>
+
+<button id='subButton' type='button' onclick="calc()">Calculate!</button>
+
+</form>
+
+<p id="output"></p>
+
+<script>
+function calc() {
+  var initial = document.getElementById('initial').value;
+  var reserve_requirement = document.getElementById('reserve_requirement').value;
+  var num = document.getElementById('num').value;
+  reserve_requirement = reserve_requirement / 100;
+  var new_M1 = initial;
+  var output = document.getElementById('output');
+  for (i = 1; i < num; i++) {
+    new_M1 += Math.pow(1 - reserve_requirement, i) * initial;
+  }
+  output.textContent = new_M1;
+}
+</script>
+
+</body>
+</html>
